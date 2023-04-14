@@ -19,7 +19,10 @@
                 
             </div>
             <div class="hero">
-                <img src="img/pupitre1.png" alt="">
+            <div class="images">
+                <img class="pupitre0 active" src="img/pupitre1.png" alt="">
+                <img  class="pupitre0" src="img/pupitre4.png" alt="">
+            </div>
                 <div class="content">
                     <h3>Pupitre</h3>
                     <h1>Pupitre 32 pouce</h1>
@@ -38,12 +41,31 @@
                         <a href="https://web.facebook.com/rachabusinessgroup/?_rdc=1&_rdr" class="social-icon social-icon--facebook"><i class="fa-brands fa-facebook"></i></a>
                     </div>
                     </div>
-                    
+
                 </div>
                 
             </div>
         </div>
+        <div class="left" onclick="prev()"> < </div>
+        <div class="right" onclick="next()"> > </div>
     </div>
-   
+
+   <script>
+
+   let pitre = document.querySelectorAll('.pupitre0');
+   let index = 0;
+
+   function next(){
+     pitre[index].classList.remove('active');
+     index = (index + 1) % pitre.length;
+     pitre[index].classList.add('active');
+   }
+   function prev(){
+     pitre[index].classList.remove('active');
+     index = (index - 1 + pitre.length) % pitre.length;
+     pitre[index].classList.add('active');
+   }
+
+   </script>
 </body>
 </html>
